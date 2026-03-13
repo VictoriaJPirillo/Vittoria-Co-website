@@ -1,16 +1,23 @@
-/* Updated Steel Blue Tech Palette */
+/* Update to matches guide image: Dark Tech and Neon Palette */
 :root {
-    --steel-blue: #4682B4;       /* Primary Brand Color */
-    --deep-navy: #2C3E50;        /* Text and Darker Accents */
-    --ice-white: #F4F7F9;        /* Background Color */
-    --white: #ffffff;            /* Card backgrounds */
-    --slate-gray: #708090;       /* Secondary Text/Subtitles */
+    /* Primary (Dark) */
+    --deep-bg: #101620;        /* Very dark navy/charcoal for main background */
+    --tech-card: #18202F;      /* Slightly lighter dark tone for cards */
+
+    /* Accent Colors (Neon Tech) */
+    --neon-blue: #00E5FF;      /* The main bright electric blue for accents */
+    --cyan-teal: #00C896;      /* A secondary green-blue for gradients */
+    
+    /* Text */
+    --white: #ffffff;
+    --light-gray: #B0BEC5;     /* Main text and subtitles */
+    --steel-gray: #455A64;     /* Secondary text */
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--ice-white);
-    color: var(--deep-navy);
+    background-color: var(--deep-bg);
+    color: var(--light-gray);
     margin: 0;
     line-height: 1.6;
 }
@@ -21,34 +28,38 @@ body {
     padding: 0 20px;
 }
 
+/* Updated Header: Uses image as guide for deep space, large and dark */
 header {
-    background-color: var(--deep-navy); /* Darker header for a tech feel */
-    border-bottom: 4px solid var(--steel-blue);
+    background-color: var(--deep-bg);
+    border-bottom: 2px solid var(--cyan-teal); /* Subtle separator line */
     color: var(--white);
-    padding: 80px 0;
+    padding: 100px 0; /* Increased padding for a larger 'hero' feel */
     text-align: center;
 }
 
 h1 { 
     margin: 0; 
-    font-size: 2.6rem; 
-    letter-spacing: -0.5px;
+    font-size: 2.8rem; 
+    letter-spacing: -1px;
+    background: linear-gradient(120deg, var(--neon-blue), var(--cyan-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle { 
     font-weight: 300; 
-    color: var(--steel-blue); /* Pops against the navy */
-    font-size: 1.3rem; 
+    color: var(--cyan-teal); /* Secondary accent */
+    font-size: 1.4rem; 
     margin-top: 10px;
 }
 
-.main-content { padding: 60px 0; }
+.main-content { padding: 80px 0; }
 
 .card {
-    background: var(--white);
+    background: var(--tech-card);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.08); /* Softer tech-style shadow */
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1); /* Subtle neon blue shadow */
     margin-bottom: 40px;
 }
 
@@ -59,39 +70,42 @@ h1 {
 }
 
 .service-item {
-    background: var(--white);
+    background: var(--tech-card);
     padding: 30px;
-    border-left: 5px solid var(--steel-blue); /* Vertical accent for a modern look */
+    border-top: 3px solid var(--neon-blue); /* Neon blue border like the gear edge */
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
 }
 
 .service-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2); /* Enhanced neon glow on hover */
 }
 
 h2, h3 {
-    color: var(--deep-navy);
+    color: var(--white);
 }
 
 .cta-section {
     text-align: center;
     margin-top: 60px;
-    padding: 50px;
-    background: var(--steel-blue);
-    color: white;
+    padding: 60px;
+    background: var(--tech-card);
+    color: var(--light-gray);
     border-radius: 12px;
+    border: 2px solid var(--neon-blue); /* Neon blue container */
 }
 
-.cta-section h2, .cta-section p {
-    color: white;
+.cta-section h2 {
+    color: var(--neon-blue);
 }
 
 .button {
     display: inline-block;
-    background: var(--white);
-    color: var(--steel-blue);
+    background: transparent;
+    border: 2px solid var(--cyan-teal); /* Modern ghost-button style */
+    color: var(--cyan-teal);
     padding: 14px 35px;
     text-decoration: none;
     border-radius: 6px;
@@ -100,17 +114,17 @@ h2, h3 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
-    background: var(--deep-navy);
-    color: var(--white);
+    background: var(--cyan-teal);
+    color: var(--tech-card);
 }
 
 footer {
     text-align: center;
     font-size: 0.85rem;
     padding: 60px 0;
-    color: var(--slate-gray);
+    color: var(--steel-gray);
 }
